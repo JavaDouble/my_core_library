@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo05:猜数字</title>
+		<script>
+			var r= parseInt(Math.random()*10);
+			function guess(){
+				var num=document.getElementById("t1").value;
+				var span=document.getElementById("result");
+				if(isNaN(num)){
+					span.innerHTML()="请输入一个数字";
+				}else{
+					if(num==r){
+						span.innerHTML="猜对了";
+					}else{
+						if(num>r){
+							span.innerHTML="大了";
+						}else{
+							span.innerHTML="小了";
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="猜数字" onclick="guess();"/>
+		<span id="result"></span>
+	</body>
+</html>

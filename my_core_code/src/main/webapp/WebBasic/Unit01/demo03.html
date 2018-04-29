@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--图像和超链接：图像：图像元素，相对路径和绝对路径 超链接：超链接元素，锚点-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit01/demo03</title>
+	</head>
+	<body>
+		<!--图像 使用<img>元素将图像添加到页面 空标记-->
+		<!--必须属性src常用属性weith,height -->
+		<p>
+		<img src="../imgs/bee.png">
+		</p>
+		<!-- 绝对路径 从最高级目录下开始的完整路径 -->
+
+		<!-- 相对路径 目标文件的位置是相对于当前文件的位置，包括目录名。或者从一个可以哦那个当前目录出发找到该文件的路径 -->
+		<p>
+		<img src="..\imgs\f1.jpg">
+		</p>
+
+		<!-- 超链接 -->
+		<!-- 超链接元素 使用<a>元素创建一个超链接，语法：<a href="" target="">文本</a> -->
+		<!-- href属性：连接URL target属性：目标打开方式，
+		可取值为_blank(跳转到新建一个的页面),_self(默认，在自己页面跳转)等 -->
+		<p>
+			<a href="http://www.baidu.com" target="_blank">TMOOC</a>
+		</p>
+		<p>
+			<a href="demo02.html" target="_self">demo02.html</a>
+		</p>
+		<p>
+			<a href="demo01.html" target="_self">demo01.html</a>
+		</p>
+		<p>
+			<a href="demo03.html" target="_self">demo03.html</a>
+		</p>
+		<p>
+			<a href="demo04.html" target="_self">demo04.html</a>
+		</p>
+		<!--锚点 是文档中某行的一个记号：用于连接到文档中的某个位置-->
+		<!--定义锚点<a name=" anchorname1">锚点一</a> -->
+		<!--链接到锚点：在锚点名前加上#<a herf="#anchorname1">锚点一</a>-->
+		<a name="bottom">底部</a>
+		<a href="#bottom">回到底部</a>
+	</body>
+</html>

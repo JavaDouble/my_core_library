@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit01/demo04</title>
+	</head>
+	<body>
+		<!-- 表格 表格的作用：通常用来组织结构化的信息，是一些被称作单元格的矩形框
+		按照从左到右，从上倒下的顺序排列在一起而形成的 表格的数据保存在单元格里-->
+		<!--创建表格 定义<table></table>行：<tr></tr>列(单元格)：<td></td>-->
+		<!--border="0"1：显示边框的宽度，0不显示边框 默认不显示(0)-->
+		<table border="1" cellspacing="0">
+			<tr>
+				<td>第一行，第一列</td>
+				<td>第一行，第二列</td>
+			</tr>
+			<tr>
+				<td>第二行，第一列</td>
+				<td>第二行，第二列</td>
+			</tr>
+		</table>
+		<br>
+		<!-- table元素border,width/height,align,cellpadding:单元格边框与内
+		容之间的间距,cellspacing:单元格之间的间距 <tr>元素align/valign
+		<td>元素align/valign/width/height/colspan/rowspan-->
+		<!--跨行属性 跨行：rowspan使当前单元格沿着垂直方向延伸，值为一正整数
+		代表此单元格垂直延伸的单元格数-->
+		<table border="1" cellspacing="0">
+			<tr>
+				<td rowspan="2">aaa</td>
+				<td>bbb</td>
+			</tr>
+			<tr>
+				<td>ddd</td>
+			</tr>
+		</table>
+		<br>
+		<!--跨列属性 跨列：colspan使当前单元格沿着水平方向延伸，值为一正整数
+		代表此单元格水平延伸的单元格数-->
+		<table border="1" cellspacing="0">
+			<tr>
+				<td colspan="2">aaa</td>
+			</tr>
+			<tr>
+				<td>bbb</td>
+				<td>ccc</td>
+			</tr>
+		</table>
+		<br>
+		<!-- 行分组：表格2部分：表头，表主体，表尾 表头行分组：<thead></thead>
+		表主体分组：<tbody></tbody> 表尾行分组:<tfoot></tfoot>-->
+		<table border="1" cellspacing="0" width="30%">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>名称</th>
+					<th>金额</th>
+				</tr>
+			</thead>
+			<tbody style="color:red;">
+				<tr>
+					<td>001</td>
+					<td>鼠标</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>键盘</td>
+					<td>100</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">合计</td>
+					<td>150</td>
+				</tr>
+			</tfoot>
+		</table>
+		<br>
+		<!-- day01课后作业第4题 -->
+		<table border="1" cellspacing="0" width="10%">
+			<tr>
+				<td colspan="2">a</td>
+				<td rowspan="2">b</td>
+			</tr>
+			<tr>
+				<td rowspan="2">c</td>
+				<td>d</td>
+			</tr>
+			<tr>
+				<td colspan="2">e</td>
+			</tr>
+		</table>
+	</body>
+</html>

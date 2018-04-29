@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo3:计算平方</title>
+		<script>
+			function double(){
+				//获取文本框
+				var e_obj=document.getElementById("t1");
+				console.log(e_obj);
+				//获取span
+				var s_obj=document.getElementById("result");
+				console.log(s_obj);
+				//获取框内的值
+				var d=e_obj.value;
+				console.log(d);
+				//判断该值是不是数字
+				if(isNaN(d)){
+					//不是数字，将提示写入span
+					s_obj.innerHTML="请输入数字";
+				}else{
+					//是数字，计算平方并将结果写入span
+					s_obj.innerHTML=d*d;
+				}
+			}			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="计算平方" onclick="double();"/>
+		=	<span id="result"></span>
+	</body>
+</html>

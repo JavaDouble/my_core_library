@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo2:js基本语法</title>
+		<script>
+			//1.函数内的js是在点击按钮时调用的
+			//2.直接写的js是在页面加载(运行)时,直接调用的,
+			//它的调用时机比body还早
+			alert(1);
+			
+			/*1.变量*/
+			//控制台打印
+			console.log("测试");
+			//1.声明变量
+			var x;
+			console.log(x);
+			var i=5;
+			console.log(i);
+			var y="hello";
+			console.log(y);
+			/*2.数据类型*/
+			//隐式转换
+			var sp="";
+			var s="hello";
+			var n=3.14;
+			var b=true;
+			console.log(s+n);//hello3.14
+			console.log(s+b);//hellotrue
+			console.log(n+b);//4.140000000000001 
+			console.log(b+b);//2
+			
+			//数据类型转化函数 强制转换
+			console.log(parseInt(s));//NaN(not a number) 
+			console.log(parseInt(n));//3
+			console.log(parseFloat(i));//5
+			console.log(parseInt(sp));//NaN
+			
+			//查询当前类型
+			console.log(typeof(s));//string
+			console.log(typeof(n));//number
+			console.log(typeof(b));//boolean
+			console.log(typeof(x));//undefined
+			console.log(typeof(i));//number
+			console.log(typeof(y));//string
+			
+			//isNaN 判断是否不是一个数 返回值是boolean类型
+			//判断的是能不能转换成一个数字 若能 当成数字 返回false
+			//不能 不能当成数字 返回true
+			console.log(isNaN(56));//false
+			console.log(isNaN("56"));//false
+			console.log(isNaN("a56"));//true
+			console.log(isNaN(""));//false 可以转换成数字
+			console.log(isNaN(parseInt()));//true
+			console.log(isNaN(true));//false 可以转换成数字
+			
+		</script>
+	</head>
+	<body>
+		<p>JS基本语法和Java是很相似的</p>
+	</body>
+</html>

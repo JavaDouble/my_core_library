@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit02/demo01：表单</title>
+	</head>
+	<body>
+		<!--表单 用于显示，收集信息，并提交信息到服务器 二要素：Form元素，
+		表单控件-->
+		<!-- 表单就是从浏览器向服务器传输数据的手段 -->
+		<!--表单元素：使用<form></form>标记，表示要将此元素中所涵盖的控件
+		的数据传输给服务器 主要属性：action:表单提交的URL method:指出表单数
+		据提交的方式enctype:表单数据进行编码的方式-->
+		<!--表单控件 表单可以包含很多不同类型的表单控件 表单控件是一种HTML元素，
+		是信息输入项 表单控件包括：input元素(具有不同的外观)：文本框，密码框
+		单选框，复选框 按钮，隐藏域，文件选择框  其他元素：标签，文本域，下拉选-->
+		<!--input元素：文本框，密码框 文本框：<input type="text"/>
+		密码框：<input type="password"/>
+		主要属性：value属性：由访问者自由输入的任何文本
+		maxlength属性：限制输入的字符数 readonly属性：设置文件控件只读-->
+		<form>
+			<p>
+				<label for="username">帐号：</label>
+				<input type="text" value="mary"/>
+			</p>
+			<p>
+				<label for="password">密码：</label>
+				<input type="password" value="123456"/>
+			</p>
+
+		<!--单选框，复选框 单选框：<input type="radio"/> 复选框：
+		<input type="checkbox"/> 主要属性：value:文本，当提交form时，
+		如果选中了此单选按钮，那么value就被发送到服务器 name:用于实现分组，一组单
+		选框或者复选框的名称必须相同 checked:设置选中-->
+		<!--name组名，同一组radio互斥  checked:设置默认选中 value：  -->
+			<p>
+				性别：
+					<input type="radio" name="gender" id="male" checked="checked"/>
+					<label for="male">男士</label>
+					<input type="radio" name="gender" id="female"/>
+					<label for="female">女士</label>
+			</p>
+			<p>
+				角色：
+				<input type="checkbox" name="gender" id="male"/>
+				<label for="male">超级管理员</label>
+				<input type="checkbox" name="gender" id="female"/>
+				<label for="female">账单管理员</label>
+			</p>
+		<!--按钮
+		提交按钮：<input type="submit"/>传送表单数据给服务器端
+		或其他程序处理。
+		重置按钮：<input type="reset"/>清空表单的内容并把所有
+		表单控件设置为最初的默认值。
+		普通按钮：<input type="button"/>用于执行客户端脚本
+		主要属性：value:按钮的名字-->
+			<p>
+				<input type="submit" value="提交"/>
+				<input type="reset" value="重置"/>
+				<input type="button" value="保存"/>
+			</p>
+		<!--隐藏域，文件选择框  隐藏域：<input type="hidden"/>
+		在表单中包含不希望用户看见的信息
+		文件选择框:<input type="file"/> 选择要上传的文件-->
+			<p>
+				<input type="file"/>
+			</p>
+		<!-- 其他元素 标签 表单中的文本，用于给控件设置显示名称
+		语法：<label for="控件ID">文本</label>主要属性：for:设置该文本所
+		关联的控件ID,关联后点击标签等同于点击控件-->
+			<p>
+				<label for="">记住我</label>
+			</p>
+		<!-- 文本域：相当于多行文本框 语法：<textarea>文本</textarea>
+		主要属性:cols:指定文本区域的列数 rows:指定文本区域的行数 readonly:只读
+		-->
+			<p>
+				<textarea></textarea>
+			</p>
+		<!--下拉选 下拉选择内容
+		语法：
+		<select>
+			<option value="1">Java</option>
+			<option value="2">php</option>
+			<option value="3">.net</option>
+		</select>
+		-->
+			<p>
+				<select>
+					<option value="1">Java</option>
+					<option value="2">php</option>
+					<option value="3">.net</option>
+				</select>
+			</p>
+		</form>
+	</body>
+</html>

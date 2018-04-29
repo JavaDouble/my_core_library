@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit02/demo3:css语法</title>
+		<style>
+			/*1.继承性：父元素的样式子元素可以继承(颜色，字体)*/
+			body{
+				font-family:"微软雅黑","文泉驿正黑","黑体";
+			}
+			/*2.层叠性：多次给同一个元素设置样式，若设置的样式不重复的，则其效果
+			可以叠加在一起*/
+			h1{
+				font-size:24px;
+			}
+			/**/
+			body{
+				color:green;
+			}
+			/*3.优先级：先后给同一个元素设置样式，若设置的样式相同，则效果以后者为准
+			，也叫就近原则。
+			*/
+			h2{
+				color:black;
+			}
+			/**/
+			h2{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>苍老师</h1>
+		<h2>范传奇</h2>
+	</body>
+</html>

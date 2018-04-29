@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02/demo3:jQuery动画</title>
+		<style>
+	 		#d1{
+				width:100px;
+				height:100px;
+				background-color:#f00;
+				/*自定义动画基于定位，通过定时器不断修改元素的偏移量就实现了
+				动画*/
+				position:relative;
+			} 
+		</style>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			//显示，隐藏动画效果
+			//1.show(执行时间,回调函数)/hide()通过改变元素宽度和高度实现显示和隐藏
+			//有2个参数 执行时间：slow,normal,fast或毫秒数
+			//回调函数：动画执行完毕之后要执行的函数
+			//2.slideDown()/slideUp()上下滑动式的动画实现
+			//通过改变高度来实现显示或者隐藏的效果 用法同show()/hide()
+			//3.fadeIn()/fadeOut() 淡入淡出式动画效果
+			//通过改变不透名度opacity来实现显示或者隐藏 用法同show()/hide()
+			function f1(){
+				//$("#d1").show();
+				//$("#d1").show(3000);
+				//$("#d1").slideDown();
+				$("#d1").fadeIn();
+			}
+			function f2(){
+				//$("#d1").hide();
+				//$("#d1").hide(3000);
+				//参数2是一个函数，jQuery会在动画完成后调用此函数，该函数
+				//叫回调函数。回调函数：完成后自动调用的函数。解决并发问题。
+				$("#d1").hide(3000,function(){
+					console.log("ok");
+				});
+				//$("#d1").slideUp();
+				//$("#d1").fadeOut();
+				//显示/隐藏的动画原理：通过定时器不断修改元素的样式
+				//定时器相当于支线程，f2相当于主线程，二者并发执行，主线程不会
+				//等待支线程，而是立刻输出了over，支线程3秒后才完成。
+				console.log("over");
+			}
+			//自定义动画效果 animate(偏移位置,执行时间,回调函数)
+			//偏移位置:{}描述动画执行之后元素的样式 执行时间：毫秒数
+			//回调函数：动画执行结束后要执行的函数
+			function f3(){
+				$("#d1").animate({"left":"300px"},3000)
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+			<input type="button" value="显示" onclick="f1();"/>
+			<input type="button" value="隐藏" onclick="f2();"/>
+			<input type="button" value="改变" onclick="f3();"/>
+		</p>
+		<div id="d1">
+			<!-- <img src="../imgs/03.jpg"/> -->
+		</div>
+	</body>
+</html>

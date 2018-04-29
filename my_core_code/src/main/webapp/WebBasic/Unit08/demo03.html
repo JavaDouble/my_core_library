@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day08/demo03:联动菜单</title>
+		<script>
+			var cities;
+			window.onload=function(){
+				cities=[["石家庄","廊坊","邯郸"],
+				        ["郑州","洛阳","开封"],
+				        ["武汉","荆州","襄阳"]];
+			}
+			function change(){
+				//console.log(1);
+				var province=document.getElementById("province").value;
+				//console.log(province);
+				var pv_cities=cities[province];
+				var city=document.getElementById("city");
+				city.innerHTML="<option>请选择</option>";
+				if(pv_cities){
+					for(var i=0;i<pv_cities.length;i++){
+						var option=document.createElement("option");
+						option.innerHTML=pv_cities[i];
+						city.appendChild(option);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		省份：
+		<select id="province" onchange="change();">
+			<option value="-1">请选择</option>
+			<option value="0">河北省</option>
+			<option value="1">河南省</option>
+			<option value="2">湖北省</option>
+		</select>
+		城市：
+		<select id="city">
+			<option>请选择</option>
+		</select>
+	</body>
+</html>

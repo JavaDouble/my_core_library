@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit07/demo2:动态时钟</title>
+		<style>
+			p{
+				width:200px;
+				height:40px;
+				line-height:40px;
+				text-align:center;
+				font-size:20px;
+				border:1px solid #ccc;
+			}
+		</style>
+		<script>
+			var id;
+			function start(){
+				//若id非空，表示已启动，则不要再次启动了
+				if(id){
+					return;
+				}
+				//启动定时器，1秒执行一次
+				id=setInterval(function(){
+					var p=document.getElementById("p");
+					//获取当前客户端的时间
+					var d=new Date();
+					//获取本地的时间
+					var now=d.toLocaleTimeString();
+					//将时间写入clock
+					p.innerHTML=now;
+				}, 1000);
+			}
+			function parse(){
+				clearInterval(id);
+				//停止后将id清空，以便于再次开始时，利用id判断当前是否已启动
+				id=0;
+			}
+		</script>
+	</head>
+	<body>
+		<p id="p"></p>
+		<p>
+			<input type="button" value="开始" onclick="start();"/>
+			<input type="button" value="暂停" onclick="parse();"/>
+		</p>
+	</body>
+</html>

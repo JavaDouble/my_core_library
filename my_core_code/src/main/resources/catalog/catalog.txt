@@ -1,0 +1,71 @@
+目录说明：
+my_code_libraries(原始整理的代码 混乱 不易查阅 )
+my_core_code项目(代码存放项目) V1.0 注释笔记版代码
+.java文件命名规范：
+XXXDemos.java是指XXX的演示和用法说明，用于初学者
+Exercises.java是指XXXDemos的进阶，学习完成XXXDemos.java的案例和联系
+Interview.java是指面试题的集锦
+
+磁盘存放文件规则：
+E:\Java\Java文件夹
+E:\Java\U盘拷贝：存放的是U盘拷贝的资料
+D:\Java：Java开发文件夹
+D:\SQL：数据库文件夹
+D:\SDK：常用工具文件夹
+
+
+Java必备知识概述
+fundamental、OOP、JavaSE、MySQL、Oracle、JDBC、Webbasic+jQuery、JavaEE、Ajax
+Spring、MyBatis、SSM、struts2、hibernate、SSH
+
+温故知新计划：
+知识模块			天数		累计天数								内容
+fundamental 	最多1天	1天								文档/笔记/Demos/练习/面试题
+OOP			 	最多1天	2天								文档/笔记/Demos/练习/面试题/练手小项目
+JavaSE			最多3天	5天								文档/笔记/Demos/练习/面试题/练手小项目
+MySQL			最多1天	6天(MyCat)						文档/笔记/Demos/练习/面试题
+Oracle			最多2天	8天								文档/笔记/Demos/练习/面试题
+JDBC			最多1天	9天								文档/笔记/Demos/练习/面试题/练手小项目
+WebBasic+jQuery	最多2天	11天								文档/笔记/Demos/练习/面试题
+JavaEE			最多3天	14天								文档/笔记/Demos/练习/面试题
+Ajax			最多1天	15天						 		文档/笔记/Demos/练习/面试题/练手项目
+Spring			最多3天	18天								文档/笔记/Demos/练习/面试题
+MyBatis			最多2天	20天								文档/笔记/Demos/练习/面试题
+SSM整合			最多3天	23天(项目)						文档/笔记/Demos/练习/面试题/项目
+Strut2			最多1天	24天								文档/笔记/Demos/练习/面试题
+Hibernate		最多2天	26天								文档/笔记/Demos/练习/面试题
+SSH整合			最多3天	29天(项目)						文档/笔记/Demos/练习/面试题/项目
+项目管理和版本控制	最多2天	31天								文档/笔记/面试题/资料/项目中学习
+(Maven[gradle]+SVN[Git])
+日志缓存测试调试定位	最多3天	34天								文档/笔记/面试题/资料/项目中学习
+(日志:log4j,slf4j, 缓存:Ehcache/Memcached/Redis/MongoDB
+测试：jUnit,TestNG	调试：Debug	定位：快速定位组合快捷键+Debug)
+
+JavaIDE插件使用	最多2天	36天								网上资料/项目中体验/总结文档/职场交流
+开发协作平台：企业内部自研，禅道，
+集成管理工具：Jenkins
+
+进阶知识概述
+中间件和分布式
+微服务：dubbo(重点)和spring cloud
+
+Spring Boot:
+1.创建独立的Spring应用程序
+2. 嵌入的Tomcat，无需部署WAR文件
+3. 简化Maven配置
+4. 自动配置Spring
+5. 提供生产就绪型功能，如指标，健康检查和外部配置
+6. 绝对没有代码生成和对XML没有要求配置
+
+权限安全框架：Apache shiro(重要学习)和spring security
+
+Java搜索引擎框架：Lucene/Solr(重点学习)
+
+工作流：
+
+规范流程模式：Scrum敏捷开发， 瀑布式开发
+OSGL
+
+LAP计划：learn and api page
+把Java必备知识做成网页版的学习和api,方便查询和温故知新计划，后期可以把所学和知道的东西全部加入其中
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit01/demo2</title>
+	</head>
+	<body>
+		<!-- 1.标题 -->
+		<h1><a href="#cang">苍老师</a></h1>
+		<h2>范传奇</h2>
+		<h3>王克晶</h3>
+		<!-- 2.段落 -->
+		<p>范传奇暗恋王克晶</p>
+		<p><a href="#cang">苍老师吃醋</a></p>
+		<!-- 3.列表 -->
+		<!-- 3.1有序列表 -->
+		<ol>
+			<li>河北省</li>
+			<li>山东省</li>
+			<li>江苏省</li>
+		</ol>
+		<!-- 3.2无序列表 -->
+		<ul>
+			<li>石家庄</li>
+			<li>廊坊</li>
+			<li>佳木斯</li>
+		</ul>
+		<!-- 3.3嵌套列表 -->
+		<ol>
+			<li>
+				河北省
+				<ul>
+					<li>石家庄</li>
+					<li>廊坊</li>
+				</ul>
+			</li>
+			<li>
+				山东省
+				<ul>
+					<li>青岛</li>
+					<li>济南</li>
+				</ul>
+			</li>
+		</ol>
+		<!-- 4.行内元素 -->
+		<p>
+			<i>北三环</i><b>西路甲</b><u>18号</u><span style="color:red">中鼎大厦</span>B座7层
+		</p>
+		<!-- 5.空格折叠 -->
+		<p>
+			那是一个&nbsp;&nbsp;&nbsp;秋天，<br>
+			看着传奇&nbsp;&nbsp;&nbsp;跑偏。<br>
+			奔着克晶&nbsp;&nbsp;&nbsp;而去，<br>
+			误入老苍&nbsp;&nbsp;&nbsp;心间。
+		</p>
+		<!-- 6.图片 -->
+		<!-- 6.1绝地路径 从盘符开始写出图片详细的存储位置
+		如：D:/day01/01.jpg 如：/home/soft01/01.jpg
+		当软件上线时，若用户想改变存储的路径是不行的，有很大的局限性，一般不用。-->
+		<p>
+			绝对路径
+			<img src="/home/soft01/tts9/workspace/WebBasic/src/main/webapp/day01/01.jpg">
+			<img src="/home/soft01/tts9/workspace/WebBasic/src/main/webapp/day01/imgs/02.jpg">
+			<img src="/home/soft01/tts9/workspace/WebBasic/src/main/webapp/03.jpg">
+		</p>
+		<!-- 6.2相对路径 只需要写出图片和网页的相对位置即可。
+		图片和网页平级：01.jpg
+		图片在网页下级：imgs/02.jpg
+		图片在网页上级：../03.jpg
+		-->
+		<p>
+			相对路径
+			<img src="01.jpg">
+			<img src="imgs/02.jpg">
+			<img src="../03.jpg">
+			<!-- 一般这样用 -->
+			<img src="../imgs/bee.png">
+		</p>
+		<!-- 7.超链接 -->
+		<!-- 7.1链接到网站 -->
+		<!-- href属性：连接URL target属性：目标打开方式，
+		可取值为_blank(跳转到新建一个的页面),_self(默认，在自己页面跳转)等 -->
+		<p>
+			<a href="http://www.tmooc.cn">达内</a>
+			<a href="http://doc.tmooc.cn" target="_blank">达内</a>
+		</p>
+		<!-- 7.2链接到锚点 -->
+		<!-- 7.2.1将这个位置做成锚点 -->
+		<p>
+			<a name="cang">刘苍松</a>不是苍井空，他是苍井空的苍，他是苍井空的松。
+		</p>
+		<!-- 7.2.2顶部默认是锚点，没有名字 -->
+		<p>
+			<a href="#">回到顶部</a>
+		</p>
+		<!-- 8.表格 -->
+		<!-- 8.1普通的表格-->
+		<table border="1" cellspacing="0" width="30%">
+			<tr>
+				<td>苍老师</td>
+				<td>范传奇</td>
+			</tr>
+			<tr>
+				<td>王克晶</td>
+				<td>程祖红</td>
+			</tr>
+		</table>
+		<br>
+		<!-- 8.2跨行，跨列 -->
+		<!-- 跨列 -->
+		<table border="1" cellspacing="0" width="30%">
+			<tr>
+				<td colspan="2">苍老师</td>
+				<!--<td>范传奇</td>-->
+			</tr>
+			<tr>
+				<td>王克晶</td>
+				<td>程祖红</td>
+			</tr>
+		</table>
+		<br>
+		<!-- 跨行 -->
+		<table border="1" cellspacing="0" width="30%">
+			<tr>
+				<td rowspan="2">苍老师</td>
+				<td>范传奇</td>
+			</tr>
+			<tr>
+				<!-- <td>王克晶</td> -->
+				<td>程祖红</td>
+			</tr>
+		</table>
+		<br>
+		<!-- 8.3行分组 -->
+		<table border="1" cellspacing="0" width="30%">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>名称</th>
+					<th>金额</th>
+				</tr>
+			</thead>
+			<tbody style="color:red;">
+				<tr>
+					<td>001</td>
+					<td>鼠标</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>键盘</td>
+					<td>100</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">合计</td>
+					<td>150</td>
+				</tr>
+			</tfoot>
+		</table>
+		<br>
+		<table border="1" cellspacing="0" width="40%">
+			<thead>
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>金额</td>
+				</tr>
+			</thead>
+			<tbody style="color:red;">
+				<tr>
+					<td>001</td>
+					<td>鼠标</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>键盘</td>
+					<td>100</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">合计</td>
+					<td>150</td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

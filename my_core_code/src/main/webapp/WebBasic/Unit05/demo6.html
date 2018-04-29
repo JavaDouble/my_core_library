@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo5:流程控制(计算阶乘)</title>
+		<script>
+			/*控制语句(顺序结构)*/
+
+			/*分支结构*/
+			//if()else(),if()else if() else();switch case
+			
+			/*循环结构*/
+			//for循环
+			var sum=0;
+			for(var i=0;i<10;i++){
+				sum+=i;
+			}
+			alert(sum);
+			//while循环
+			//do-while循环
+			
+			/*JS的条件可以是任意表达式，即可以返回任何类型值
+			JS里非布尔值也可以做条件，其中空值相当于false，非空值相当于true
+			空值：0，“”，null，NaN，undedined*/
+			var k=8;
+			if(k){
+				console.log("ok");
+			}
+			//也可以这样
+			var g="abc";
+			g && console.log("yes");
+			
+		 	function cal(){
+				var num=document.getElementById("t1").value;	
+				var span=document.getElementById("result");
+				if(isNaN(num)){
+					span.innerHTML="请输入数字";
+				}else{
+					if(num>0&&num<100){
+						var sum=1;
+				/* for(var i=1;i<=num;i++){
+						sum*=i;
+					}
+					for(var i=num;i>0;i--){
+						sum*=i;
+					} */
+					for(var i=num;i;i--){
+						sum*=i;
+					}
+						console.log(sum);
+						span.innerHTML=sum;
+					}else if(num==0){
+						span.innerHTML=1;
+					}else{
+						if(num<0){
+						 	span.innerHTML="负数没有阶乘"; 
+						}
+					}
+				}
+			} 
+		</script>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="计算阶乘" onclick="cal();"/>
+		=	<span id="result"></span>
+	</body>
+</html>

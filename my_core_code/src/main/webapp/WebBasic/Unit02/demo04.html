@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit02/demo4:css选择器</title>
+		<style >
+		/*1.类选择器：根据class选择一组元素。*/
+			.female{
+				color:pink;
+			}
+		</style>
+		<style>
+		/*2.id选择器：*/
+			#p4{
+				color:red;
+			}
+		</style>
+		<style>
+		/*3.选择器组:写出一组选择器，选中每个选择器所对应的目标的并集(合计)。*/
+			.female,#p4{
+				/*字体加粗*/
+				font-weigth:bold;
+				font-size:24px;
+			}
+		</style>
+		<style>
+		/*4.派生选择器*/
+		/*4.1选择某元素的子孙*/
+		/*4.2选择某元素的儿子*/
+			#p5 b{
+				color:red;
+			}
+			#p5>b{
+				font-size:30px;/*字体大小默认：16px*/
+			}
+		</style>
+		<style>
+		/*5.伪类选择器:根据元素的状态选择元素*/
+		/*5.1未访问过的超链接*/
+			a:link{
+				color:green;
+			}
+		/*5.2已访问过的超链接*/
+			a:visited{
+				color:red;
+			}
+		/*5.3选择激活态(正在点)的按钮*/
+			.btn:active{
+				background-color: blue;
+			}
+		/*5.4选择悬停态的元素*/
+			img:hover{
+				width:250px;
+				heigth:250px;
+			}
+		/*5.5选择有焦点(光标闪烁)的框*/
+			.txt:focus {
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="female">苍老师呀苍老师</p>
+		<p>范传奇呀范传奇</p>
+		<p class="female">王克晶呀王克晶</p>
+		<p id="p4">瞧你们那点破事</p>
+		<p id="p5">北京市<u>海淀区<b>北三环</b>西路</u>甲18号<b>中鼎大厦</b>B座7层</p>
+		<p>
+			<a href="http://www.tmooc.cn">达内</a>
+			<a href="http://doc.tedu.cn">文档</a>
+			<a href="http://www.xb.com">瞎编</a>
+		</p>
+		<p>
+			<input type="button" value="提交" class="btn"/>
+		</p>
+		<p>
+			<img src="../03.jpg">
+		</p>
+		<p>
+			<input type="text" class="txt"/>
+		</p>
+	</body>
+</html>

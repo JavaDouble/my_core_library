@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02/demo5</title>
+		<style>
+			#d1{
+				border:1px solid #ccc;
+				height:300px;
+			}
+			#d1 input{
+				float:right;
+				margin:10px;
+			}
+			#d2{
+				border:1px solid #ccc;
+				width:200px;
+				height:50px;
+				position:fixed;
+				bottom:50px;
+				right:-160px;
+			}
+		</style>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			function closed(){
+				$("#d1").slideUp(500);
+			}
+			$(function(){
+				setTimeout(function(){
+					//$("#d1").slideUp();
+					$("#d1 input").trigger("click");
+				},3000);
+				//给小广告后绑定事件 animate的参数1声明动画完成后，元素所处的
+				//位置。
+				$("#d2").hover(
+						function(){
+							//悬停时
+							$(this).animate({"right":"0"},500);
+						},
+						function(){
+							//离开时
+							$(this).animate({"right":"-160px"},500);
+						});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="d1">
+			<input type="button" value="X" onclick="closed();"/>
+		</div>
+		<div id="d2">
+			<span>2326</span>
+			<span>4546</span>
+		</div>
+	</body>
+</html>

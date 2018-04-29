@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo1:js关联网页的三种方式</title>
+		<!-- 2.嵌入式 -->
+		<script>
+			function method1(){
+				alert("hello world!");
+			}
+		</script>
+		<!-- 3.文件调用方式 -->
+		<script src="method2.js"></script>
+	</head>
+	<body>
+		<!-- 1.事件定义式 -->
+		<input type="button" value="按钮" onclick="alert('message');"/>
+		<!-- 2.嵌入式 -->
+		<input type="button" value="按钮" onclick="method1();"/>
+		<!-- 3.文件调用方式 -->
+		<input type="button" value="按钮" onclick="method2();"/>
+	</body>
+</html>

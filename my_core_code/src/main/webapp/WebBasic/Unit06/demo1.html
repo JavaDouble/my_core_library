@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day06/demo1:JS常用内置对象</title>
+		<script>
+			/*
+			JS常用内置对象 
+			String,Number,Boolean,Array,Math,RegExp,Function,Date
+			*/
+			//1.String对象
+			//创建String对象有2种方式
+			var str1="hello world";
+			var str2=new String("hello world");
+			
+			console.log(str1===str2);//false
+			console.log(str1==str2);//true
+			//console.log(str1.equals(str2));//没有equals方法
+			
+			console.log(str1.length);//11
+			//大小写转换
+			console.log(str1.toLowerCase());//hello world 
+			console.log(str1.toUpperCase());//HELLO WORLD 
+			
+			//获取指定字符
+			str1="JavaScript网页教程";
+			//x.charAt(index):返回指定位置的字符 index:字符位置 默认为0
+			//JS的下标跟Java一样 从0开始 包含左侧 不包含右侧 [)
+			str2=str1.charAt();//index 默认为0
+			console.log(str2);//J
+			str2=str1.charAt(12);
+			console.log(str2);//教
+			str2=str1.charAt(0);
+			console.log(str2);//J
+			str2=str1.charAt(1);
+			console.log(str2);//a
+			
+			//x.charCodeAt(index):返回指定位置字符的Unicode编码
+			var ucode=str1.charCodeAt();
+			console.log(ucode);//J的Unicode编码：74
+			ucode=str1.charCodeAt(12);
+			console.log(ucode);//教的Unicode编码：25945
+			
+			//查询指定字符串x.indexOf(findstr,[index])
+			//x.lastIndexOf(findstr,[index])
+			//findstr:查找的字符串 index:开始查找的位置索引，可以省略
+			//返回findstr在x中出现的首字符位置索引，如果没有找到，则返回-1
+			//lastIndexOf:从后面找起
+			str1="JavaScript网页教程";
+			str2=str1.indexOf("a");
+			console.log(str2);//1
+			str2=str1.lastIndexOf("a");
+			console.log(str2);//3
+			str2=str1.indexOf("W");
+			console.log(str2);//-1
+			
+			//获取子字符串 x.substring(start,[end])
+			//start:开始位置 end:结束位置加1，可以省略
+		 	str1="abcdefgh";
+			str2=str1.substring(2,4);
+			console.log(str2);//cd 
+			
+			//替换字符串 x.replace(findstr tostr)
+			//findstr:要找的子字符串 tostr:替换为的字符串 返回替换的字符串
+			str1="abcde";
+			str2=str1.replace("cd","aaa");
+			console.log(str2);//abaaae
+			
+			//拆分字符串 x.split(bystr [howmany]);
+			//bystr:分割用的字符串 howmany:指定返回的数组的最大长度，可以省略
+			//返回分割后的字符串数组
+			str1="一,二,三,四,五,六,日";
+			var arr=str1.split(",");
+			console.log(arr[1]);//二
+			
+			//2.Number对象 数值对象 不区分整数和小数
+			//toFixed(num):转换为字符串，并保留小数点后一定位数
+			//如果必要，该数字会被舍入，也可以用0不足
+			var n=3.141592653649798;
+			console.log(n.toFixed(4));//3.1416
+			var data=23.5;
+			console.log(data.toFixed(2));//23.50
+			console.log(Number.MAX_VALUE);//1.7976931348623157e+308 
+			console.log(Number.MIN_VALUE);//5e-324 
+			//常量的声明const 
+			const PI=1.123;
+			
+			//3.Array对象
+			//3.1如何创建数组 
+			//理解：js中的数组元素类型可以是任意类型 不一定要同一类型
+			var a1=new Array();
+			var a2=new Array(7);
+			var a3=new Array(100,"a",true);
+			var a4=[100,200,300];
+			
+			//数组长度是可变的
+			console.log(a1);//[] 
+			console.log(a1.length);//0
+			a1[4]=1;
+			console.log(a1);//[4: 1] 
+			console.log(a1[0]); //undefined
+			console.log(a1.length);//5
+			
+			a1.push("lisi");
+			a1.push(23);
+			a1.push(false);
+			console.log(a1);//[4: 1, 5: "lisi", 6: 23, 7: false] 
+			console.log(a1.length);//8
+			
+			console.log(a2);//[] 
+			console.log(a2.length);//7
+			
+			console.log(a3);//[100, "a", true] 
+			console.log(a3.length);//3
+			console.log(a3[0]);//100
+			
+			console.log(a4);//[100, 200, 300]
+			console.log(a4.length);//3
+			//创建二维数组
+			var ary=[[1,2,3],['a','b'],['你好']];
+			console.log(ary);//[Array[3], Array[2], Array[1]]
+			console.log(ary[0]);//[1,2,3]
+			console.log(ary[1]);//["a", "b"]
+			console.log(ary[2]);//["你好"] 
+			
+			//3.2数组倒转
+			//var random=new Random();//JS中不支持new Random();
+			var arr=new Array();
+			for(var i=0;i<10;i++){
+				arr[i]=(parseInt(Math.random()*10));
+				//arr[i]=(Number)(Math.random()*10);//不支持此种方式强转
+			}
+			//arr.push("hello");
+			//arr.push(false);
+			arr.push(12);
+			console.log(arr);
+			arr.reverse();
+			console.log(arr.toString());
+			//3.3数组排序
+			arr.sort();
+			console.log(arr);
+		/* function num(a,b){//第一种写法
+				return a-b;
+			}
+			arr.sort(num); 
+			*/
+			//匿名函数写法
+			arr.sort(function(a,b){
+				return a-b;
+			});
+			console.log(arr);
+			
+			//4.Math对象
+			console.log(Math.PI);//3.141592653589793 
+			console.log(Math.E);//2.718281828459045 
+			console.log(Math.round(3.56));//4 把数四舍五入为最接近的整数。
+			//三角函数
+			//Math.sin(x),Math.cos(x),Math.tan(x)等
+			//计算函数
+			//Math.sqrt(x),Math.log(x),Math.exp(x)等
+			//数值比较函数
+			//Math.abs(x),Math.max(x,y,...),Math.random(),Math.round(x)等
+			
+			//求随机数组(arr)中的最大，最小值
+			var maxArr=Math.max.apply(Math,arr);
+			var minArr=Math.min.apply(Math,arr);
+			console.log(maxArr);//12
+			console.log(minArr);//0
+			
+			//5.Date对象 用于处理日期和时间，封装了系统时间毫秒数
+			//5.1如何创建日期对象
+			var now=new Date();//当前时间
+			console.log(now);//Thu Dec 29 2016 04:03:57 GMT+0800 (CST) 
+			var now2=new Date("2016/12/25 11:55");//指定时间
+			console.log(now2);//Thu Dec 29 2016 11:55:00 GMT+0800 (CST)
+			var date=now.toLocaleDateString();
+			console.log(date);//2016年12月29日 
+			date=now2.toLocaleDateString();
+			console.log(date);//2016年12月25日 
+			
+			console.log(now.toLocaleTimeString());//上午6:12:57 
+			console.log(now2.toLocaleTimeString());//上午11:55:00 
+			//console.log(now.to);
+			
+			
+			//5.2读写时间分量
+			var year=now.getFullYear();
+			var month=now.getMonth();
+			var day=now.getDate();//获取day;
+			var now=year+"年"+(month+1)+"月"+day+"日"; 
+			console.log(now);//2016年12月29日
+			
+			//6.RegExp正则对象 RegExp对象表示正则表达式
+			//创建RegExp对象两种方式
+			//var rgExp=/pattern/flags;
+			//var rgExp=new RegExp("pattern",["flags"]);
+			//flags标识有以下几个：g:设定当前匹配为全局模式
+			//i:忽略匹配中的大小写检测
+			var reg1=/^\d{3,6}$/;
+			var reg2=new RegExp("^\\d{3,6}");
+			
+			var str="you can you up,no can no bb.";
+			var reg=/no/;
+			//6.1正则对象的方法1)reg.test(str)
+			//判断str中是否包含和reg匹配的字串
+			console.log(reg.test(str));//true
+			
+			//reg.exec(str)
+			//非全局模式：从str中找出第一个和reg匹配的字串
+			console.log(reg.exec(str));
+		//["no", index: 15, input: "you can you up,no can no bb."] 
+		
+			//全局模式：第一次调用exec()则从str中找出第一个匹配的字串，
+			//第N次调用exec()则从str中找出第N个匹配的字串。
+			reg=/no/g;
+			console.log(reg.exec(str));
+		//["no", index: 15, input: "you can you up,no can no bb."] 
+			console.log(reg.exec(str));
+		//["no", index: 22, input: "you can you up,no can no bb."] 
+			console.log(reg.exec(str));//null
+			console.log(reg.exec(str));
+		//["no", index: 15, input: "you can you up,no can no bb."]
+			
+			//6.2 String中支持正则的方法
+			//1)str.replace(reg,"")
+			//将str中与reg匹配的字串替换成目标
+			console.log(str.replace(reg,"bu"));
+			//you can you up,bu can bu bb.
+			reg=/no/
+			console.log(str.replace(reg,"bu"));
+			//you can you up,bu can no bb. 
+			
+			//2)str.match(reg)
+			//从str中找出和reg匹配的字串
+			console.log(str.match(reg));//["no", "no"] 
+			//3)str.search(reg)
+			//从str中找出第一个和reg匹配的字串的索引
+			console.log(str.search(reg));//15
+			/*注意：改变字符串的方法是返回新的字符串，并不是直接修改原有的字符串
+			他是不可变的。		
+			*/
+			
+			//7.Funciton对象
+			function sum(){//方法内建议变量 建议不写var 其他地方也可以不写
+				var num=0;
+				if(arguments.length>0){
+					for(var i=0;i<arguments.length;i++){
+						num+=arguments[i];
+					}
+				}
+				return num;
+			}
+			console.log(sum(1,2,3));//6
+			console.log(sum(1,2,3,4,5,6));//21
+			console.log(sum(1,2,3,4,5,6,7,8,9));//45
+			
+			/*JS中的函数就是Function对象 函数名就是指向Function对象的引用
+			使用函数名可以访问函数对象  函数名()是调用函数
+			function 函数名([参数]){
+				函数体
+				return 返回值
+			}
+			函数的返回值 默认返回undefined 可以使用return返回具体的值
+			函数的参数 JS的函数没有重载 调用时只要函数名一样，无论传入多少个参数
+			，调用的都是同一个函数 没有接收到实参的参数值是undefined
+			所有的参数传递给arguments数组对象
+			arguments对象
+			arguments是一种特殊对象,在函数代码中，表示函数的参数数组。在函数代码
+			中，可以使用arguments访问所有参数 arguments.length:函数的参数
+			个数 arguments[i]:第i个参数 可以利用arguments实现可变参数的函数
+			*/
+			
+			//使用Function对象创建函数 使用Function对象直接创建函数
+			//var functionName=new Function(arg1,...argN,functionBody);
+			var add=new Function("x","y","return(x+y)");
+			console.log(add(2,3));//5
+			console.log(add);
+			
+			//匿名函数
+			var add=function(x,y){
+				return x+y;
+			}
+			console.log(add(2,3));
+			console.log(add);
+			
+			//全局函数 用于所有的JavaScript对象
+			//常用的全局函数有：parseInt/parseFloat isNaN eval
+			//eval函数 用于计算表达式字符串，或者用于执行字符窜中的JS代码
+			//只接受原始字符串作为参数 
+			//如果参数中没有合法的表达式和语句，则抛出异常
+			var s1="2+3";
+			console.log(s1);//2+3 
+			console.log(eval(s1));//5
+			
+			var s2="var n=5;console.log(n)";
+			console.log(s2);//var n=5;console.log(n) 
+		</script>
+	</head>
+	<body>
+		<p>JavaScript常用内置对象</p>
+		<p>1.String对象</p>
+		<p>2.Number对象</p>
+		<p>3.Boolean对象</p>
+		<p>4.Array对象</p>
+		<p>5.Math对象</p>
+		<p>6.Date对象</p>
+		<p>7.RegExp对象</p>
+		<p>8.Funciton对象</p>	
+	</body>
+</html>

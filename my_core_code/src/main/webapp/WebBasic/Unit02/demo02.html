@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit02/demo02:css的三种样式</title>
+
+		<!--第二种：内部样式:样式定义在HTML文档头部的<style>元素内
+		在文档的<head>元素内添加<style>元素 在<style>元素中添加样式规则
+		可以在当前页面范围内重用-->
+		<style type="text/css">
+			h2{
+				color:red;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="c1.css"/>
+	</head>
+	<body>
+		<!--第一种：内联样式：样式定义在HTML元素的属性style里
+		CSS语法：只需要将分号隔开一个或者多个属性/值对作为元素的style属性的值
+		属性与属性值之间用：连接 多对属性之间用；隔开 缺点：无法重用-->
+		<h1 style="color:blue;">CSS的使用：内联样式</h1>
+
+		<h2>CSS有3种用法</h2>
+		<!--第三种：样式定义在独立的css文件中 一个纯文本文件，文件后缀为.css
+		该文件中只能包含样式规则 使用步骤：创建外部样式文件 引用该样式文件
+		可以被多个网页重用-->
+		<p>1.内联方式。</p>
+		<p>2.内部样式表。</p>
+		<p>3.外部样式表。</p>
+	</body>
+</html>

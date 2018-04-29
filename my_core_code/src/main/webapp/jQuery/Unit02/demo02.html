@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02/demo02:合成事件hover</title>
+		<style>
+			.big{
+				width:250px;
+				height:250px;
+			}
+		</style>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$("img").hover(
+					function(){
+						//悬停时，图片变大
+						$(this).addClass("big");
+					},
+					function(){
+						//离开时，图片恢复
+						$(this).removeClass("big");
+					});
+				$(":button:eq(0)").click(function(){
+					$("img:eq(0)").toggle();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			<input type="button" value="显示/隐藏"/>
+		</p>
+		<img src="../imgs/02.jpg"/>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02/demo3:随机打分</title>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$(":button:eq(0)").click(function(){
+					//循环次数
+					var n=0;
+					//启动周期性定时器
+					var id=setInterval(function(){
+						//对第n个文本框模拟光标切入事件
+						$(":text").eq(n).trigger("focus");
+						//生成随机数，写入第n个框
+						var ran=parseInt(Math.random()*100);
+						$(":text").eq(n).val(ran);
+						//打分完毕后，关闭定时器
+						if(n==$(":text").length-1){
+							clearInterval(id);
+						}
+						n++;
+					},2000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			<input type="button" value="打分"/>
+		</p>
+		<p>
+			苍老师：<input type="text"/>
+		</p>
+		<p>
+			范传奇：<input type="text"/>
+		</p>
+		<p>
+			王克晶：<input type="text"/>
+		</p>
+		<p>
+			李某人：<input type="text"/>
+		</p>
+	</body>
+</html>

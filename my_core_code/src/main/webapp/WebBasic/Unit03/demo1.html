@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day03/demo1:box</title>
+		<!-- 1.框模型(Box Model)定义了元素框处理元素内容，内边距，边框和
+			外边距的方式 5种情况-->
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				border:1px solid red;
+			}			
+			#d0{
+				
+			}
+			/*1.四个边设置相同的边距*/
+			#d1{
+				padding:20px;
+				margin:30px;
+			}
+			/*2.四个边设置不同的边距(上右下左)*/
+			#d2{
+				padding:10px 20px 30px 40px;
+				margin:40px 30px 20px 10px;
+			}
+			/*3.单个边设置边距 left/rigth/top/bottom*/
+			#d3{
+				padding-left: 30px;
+				margin-bottom: 20px;
+				
+			}
+			/*4.对边设置边距(上下 左右)*/
+			#d4{
+				padding:30px 20px;
+				margin:20px 40px; 
+			}
+			/*5.对边设置外边距的特例：当左右值为auto时，该元素水平居中。*/
+			#d5{
+				margin:30px auto;
+			}
+		</style>
+	</head>
+	<body>		
+		<div id="d0">
+			d0
+		</div>
+		<!--第一种创建Box方式 -->
+		<div id="d1">
+			d1		
+		</div>
+		<!--第二种创建Box方式 -->
+		<div id="d2">
+			d2				
+		</div>
+		<!--第三种创建Box方式 -->
+		<div id="d3">
+			d3	
+		</div>
+		<!--第四种创建Box方式 -->
+		<div id="d4">
+			d4
+		</div>
+		<!--第五种创建Box方式 -->
+		<div id="d5">
+			d5
+		</div>
+	</body>
+</html>

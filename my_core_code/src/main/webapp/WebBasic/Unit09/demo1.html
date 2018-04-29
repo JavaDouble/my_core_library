@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day09/demo1:自定义对象</title>
+		<script>
+			/*自定义对象 
+			1.直接量(JSON对象)JavaScript Object Notation
+			2.构造器
+			2.1内置构造器 
+			2.2自定义构造器*/
+			//采用直接量(JSON)的方式创建对象
+			function f1(){
+				var student={
+						"name":"John",
+						"age":29,
+						"work":function(){
+							alert("Java架构师")
+						}
+				};
+				alert("姓名:"+student.name);
+				alert("年龄:"+student.age);
+				student.work();
+			}
+			//采用内置构造器创建对象
+			function f2(){
+				var teacher=new Object();
+				teacher.name="范传奇";
+				teacher.age=20;
+				teacher.work=function(){
+					alert("Java讲师");
+				};
+				alert("姓名:"+teacher.name);
+				alert("年龄:"+teacher.age);
+				teacher.work();
+			}
+			//采用自定义构造器创建对象
+			function Coder(name,age,work){
+				this.name=name;
+				this.age=age;
+				//this指当前对象 .job是给对象增加一个属性 
+				//=work是将参数赋值给这个属性
+				this.job=work;
+			}
+			function f3(){
+				var coder=new Coder(
+					"lisi",28,
+					function(){
+						alert("Java程序员")
+					}
+				);
+				alert("姓名:"+coder.name);
+				alert("年龄:"+coder.age);
+				//alert("工作:"+coder.job);
+				coder.job();
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="直接量(JSON)" onclick="f1();"/>
+		<input type="button" value="内置构造器" onclick="f2();"/>
+		<input type="button" value="自定义构造器" onclick="f3();"/>
+	</body>
+</html>

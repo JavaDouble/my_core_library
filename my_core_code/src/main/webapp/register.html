@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册页面</title>
+	</head>
+	<body>
+		<!-- action中路径的声明方式:
+		1.完整路径:http://localhost:8080/my_core_code/register
+		2.绝对路径:规则：/项目名/访问路径 举例：/my_core_code/register
+		3.相对路径:当前网页和目标网页的相对关系
+		当前：http://localhost:8080/servlet/register.html
+		目标:http://localhost:8080/servlet/register
+		相对路径是:register
+		注意：绝对路径以/开头，相对路径不以/开头 -->
+		<!-- action中的路径必须与web.xml<url-pattern>标签中文本保持一致，否则404错误 -->
+
+		<form action="register" method="post">
+		<!-- <form action="register" method="get"> -->
+
+		<!--必须声明name，服务器通过name的值获取浏览器的输入的数据 getParameter和getParameterValues  -->
+			<p>
+				帐号：<input type="text" name="username" />
+			</p>
+			<p>
+				密码：<input type="password" name="password" />
+			</p>
+
+			<!--单选框、复选框 提交表单时，浏览器会把用户选中的状态的提交给服务器，这个状态叫on，无论选择什么，都是on。
+			为了区分开用户到底选择了什么，必须增加value属性，指定一个value值，这个value值必须唯一，不重复。  -->
+			<p>
+				性别：
+				<input type="radio" name="gender" value="male"/>男
+				<input type="radio" name="gender" value="female"/>女
+			</p>
+			<p>
+				兴趣：
+				<input type="checkbox" name="checkbox" value="friend"/>交友
+				<input type="checkbox" name="checkbox" value="food"/>美食
+				<input type="checkbox" name="checkbox" value="game"/>竞技
+			</p>
+			<p>
+				<input type="submit" value="注册"/>
+			</p>
+		</form>
+	</body>
+</html>

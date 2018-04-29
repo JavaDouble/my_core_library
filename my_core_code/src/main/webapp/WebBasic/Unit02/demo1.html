@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit02/demo1：表单</title>
+	</head>
+	<body>
+		<!--1.表单元素 作用：用来圈定提交的范围，在此元素内输入的数据可以提交，
+		之外的无法提交。action:声明数据提交的目标
+		method/enctype:将来再讲-->
+		<form action="http://www.tmooc.cn">
+			<!--2.表单控件 作用：用来输入数据
+			2.1 input元素(9):通过type属性加以区分
+			2.2 其他元素(3):它们的标签名不同
+			-->
+			<!-- 2.1 input元素-->
+			<!-- 文本框 value:设置默认值 maxlength:限制最大长度
+			readonly:设置只读-->
+			<p>
+				帐号：<input type="text" value="admin" maxlength="10"
+				readonly/>
+			</p>
+			<!-- 密码框:属性同上-->
+			<p>
+				密码：<input type="password"/>
+			</p>
+			<!--单选框 name:设置组名，同一组单选会互斥。checked:设置默认选中
+			value:将来再讲。-->
+			<p>
+				性别：
+				<input type="radio" name="gender" checked/>男
+				<input type="radio" name="gender" id="female"/>女
+			</p>
+			<!--复选框(多选框) checked:设置默认选中 name/value:将来再讲-->
+			<p>
+				爱好：
+				<input type="checkbox"/>美食
+				<input type="checkbox" checked/>竞技
+				<input type="checkbox"/>影视
+				<input type="checkbox" checked/>交友
+			</p>
+			<!-- 隐藏框 -->
+			<p>
+				<input type="hidden" value="我爱你"/>
+			</p>
+			<!-- 文件选择框 -->
+			<p>
+				头像：<input type="file">
+			</p>
+			<!--按钮 submit:触发表单数据的提交
+			reset:将表单中的数据恢复成初始态
+			button:不带功能，需通过js定义功能-->
+			<p>
+				<input type="submit" value="提交"/>
+				<input type="reset"  value="重置"/>
+				<input type="button" value="测试"/>
+			</p>
+			<!--2.2 其他元素-->
+			<!--label作用：用来管理表单中的文本，可以将文本与某控件绑定在一起，
+			使得你点击文本就相当于那个控件。这样可以增加控件的点击范围，提高易用性。
+			使用方式：1)给控件加id 2）在文本上加label,写for="id值"
+			注意：id是元素的唯一标识，任何元数都有id。-->
+			<p>
+				<input type="checkbox" id="readed"/>
+				<label for="readed" style="color:red;">我已阅读并自愿遵守此协议!</label>
+			</p>
+			<!--下拉选 selected:设置默认选中 value:将来再讲-->
+			<p>
+				城市：
+				<select>
+					<option>请选择</option>
+					<option>厦门</option>
+					<option>无锡</option>
+					<option selected>东莞</option>
+					<option>重庆</option>
+					<option>西安</option>
+				</select>
+			</p>
+			<!--文本域 cols:设置宽度 rows:设置高度-->
+			<p>
+				简介：<br>
+				<textarea cols="48" rows="6" readonly>
+					这里的文本就是默认值
+				</textarea>
+			</p>
+		</form>
+	</body>
+</html>

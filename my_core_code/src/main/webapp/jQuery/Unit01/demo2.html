@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day01/demo2:jQuery对象和DOM对象</title>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			//通过jQuery对象获取DOM对象
+			function print(){
+				var ps=$("p");
+				//console.log(ps);//jQuery.fn.init[3]
+				for(var i=0;i<ps.length;i++){
+					console.log(ps[i]);
+					console.log(ps[i].innerHTML);
+					alert(ps[i].innerHTML);
+				}
+			}
+			//将DOM对象转换成jQuery对象
+			function change(img){
+				//var width=$(img).width();
+				//console.log(width);//218
+				//console.log($(img).width());//218
+ 				if($(img).width()==218){
+					$(img).width(250).height(250);
+				}else{
+					$(img).width(218).height(218);
+				} 
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="打印" onclick="print();"/>
+		<p>1.jQuery对象可以调用jQuery的API</p>
+		<p>2.DOM对象可以调用DOM的API</p>
+		<p>3.jQuery对象是对DOM数组的封装</p>
+		
+		<div>	
+			<img src="../imgs/01.jpg" onclick="change(this);"/>
+			<img src="../imgs/02.jpg" onclick="change(this);"/>
+			<img src="../imgs/03.jpg" onclick="change(this);"/>
+		</div>
+	</body>
+</html>

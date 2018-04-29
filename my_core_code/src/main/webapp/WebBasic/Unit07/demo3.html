@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit07/demo3:</title>
+		<style>
+			#message{
+				width:100px;
+				height:30px;
+				line-height:30px;
+				text-align:center;
+				border:1px solid #ccc;
+			}
+		</style>
+		<script type="text/javascript">
+			var id;
+			function send(){
+				//不要多次启动定时器
+				if(id){
+					return;
+				}
+				var message=document.getElementById("message");
+				message.innerHTML="正在发送中.....";
+				id=setTimeout(function(){
+					message.innerHTML="已发送";
+					//自动停止时清空id
+					id=null;
+				},3000);
+			}
+			function cancel(){
+				//定时器运行时才能撤销
+				if(id){
+					clearTimeout(id);
+					id=null;
+					var message=document.getElementById("message");
+					message.innerHTML="已撤销";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p id="message"></p>
+		<input type="button" value="发送" onclick="send();"/>
+		<input type="button" value="撤销" onclick="cancel();"/>
+	</body>
+</html>

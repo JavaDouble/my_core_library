@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo03:计算平方</title>
+		<script>
+			function double(){
+				var num=document.getElementById("t1").value;
+				var span=document.getElementById("result");
+				if(isNaN(num)){
+					span.innerHTML="请输入一个数字";
+				}else{
+					span.innerHTML=num*num;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="计算平方" onclick="double();"/>
+		=	<span id="result"></span>
+	</body>
+</html>

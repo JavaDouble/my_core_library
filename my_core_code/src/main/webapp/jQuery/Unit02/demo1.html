@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02/demo1:jQuery操作DOM</title>
+		<style>
+			.big{
+				font-size:24px;
+			}
+			.important{
+				color:red;	
+			}
+		</style>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			/*读写节点 增删节点 样式操作 遍历节点*/
+			$(function(){
+				//读写节点
+				//1.读写节点的内容(HTML内容和文本内容)
+				//1)html()==innerHTML 2)text()=innerText
+				console.log($("p:eq(0)").html());//读
+				$("p:eq(0)").html("<p>jQuery提供了<i>DOM相关</i>的操作</p>");//写	
+				//2.读写节点的值 val()==value
+				console.log($(":button:first").val());//读写节点的值/读
+				$(":button:first").val("写节点的值")//写
+				//3.读写节点的属性值
+				console.log($("img:eq(0)").attr("src"));//../imgs/01.jpg/读
+				$("img:eq(0)").attr("src","../imgs/02.jpg");//写
+				
+				//增删节点
+				//增加节点：1).创建2)插入
+				var li1=$("<li>重庆</li>");//创建
+				var li2=$("<li>广州</li>");
+				//console.log(li1);//jQuery.fn.init[1]
+				//console.log(li2);//jQuery.fn.init[1]
+				$("ul:eq(0)").prepend(li1);//插入
+				$("#sh").after(li2);
+				//删除节点
+				$("li:eq(1)").remove();
+				
+				//遍历节点/获取某节点的亲属(父亲，孩子，兄弟)
+				//1)当自己写代码获取节点并处理节点时，直接通过选择器选中要选择的
+				//节点即可
+				//2)通过调用别人的方法获取的节点时，对它进行处理后，若需要处理它
+				//相关节点时，通过调用节点的方法来获取。
+				var sh=$("#sh");
+				console.log(sh.parent());		
+				console.log(sh.next());	
+				console.log(sh.prev());	
+				//获取所有兄弟
+				console.log(sh.siblings());
+				console.log(sh.siblings()[0]);
+				//获取没有id的li
+				var ul=$("ul:eq(0)");
+				console.log(ul.find("li:not(li[id])"));
+				
+				//样式操作1)给class追加一个值 
+				$("p:eq(0)").addClass("big").addClass("important");
+				//console.log(11)
+				//console.log($("p:eq(2)"));//内容修改后 下标增加
+				$("p:eq(2)").addClass("big").addClass("important");
+				//2)给class删除一个值
+				//$("p:eq(0)").removeClass("big").removeClass("important");
+				//3)给class删除所有值
+				//$("p:eq(0)").removeClass();
+				//4)判断class中是否包含某值
+				console.log($("p:eq(0)").hasClass("big"));//true
+			});	
+			//5)切换样式
+			//判断某值是否存在，有则删之，无则加之。
+			function change(){
+				$("p:eq(0)").toggleClass("big");
+			}
+		</script>
+	</head>
+	<body>
+		<p>jQuery提供了<b>DOM相关</b>的操作</p>
+		<p>查询(选择器) 读写节点 增删节点 样式操作 遍历节点</p>
+		<p>
+			<input type="button" value="读写节点的值"/>
+		</p>
+		<p>
+			<img src="../imgs/01.jpg"/>
+		</p>
+		<ul>
+			<li>廊坊</li>
+			<li>佳木斯</li>
+			<li>北京</li>
+			<li id="sh">上海</li>
+			<li>东莞</li>
+			<li>青岛</li>		
+		</ul>
+		<p>
+			<input type="button" value="变" onclick="change();"/>
+		</p>
+	</body>
+</html>

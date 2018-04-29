@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo5:猜数字</title>
+		<script>
+			//页面加载时立刻生成随机数，这个时机比加载body早，也比用户点击按钮早
+			//[0,1)小数——>[0,10)小数——>[0,9)整数
+			var r=parseInt(Math.random()*10);
+			console.log(r);
+			function guess(){
+				//获取文本框的值
+				var num=document.getElementById("t1").value;
+				var span=document.getElementById("result");
+				//判断该值是否为数字
+				if(isNaN(num)){
+					span.innerHTML="请输入数字";
+				}else{
+					//是数字 开始猜
+					if(num==r){
+						span.innerHTML="猜测正确";
+					}else{
+						if(num>r){
+							span.innerHTML="猜测数字大，请重新输入:";
+						}else{
+							span.innerHTML="猜测数字小，请重新输入:";
+						}	
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="猜数字" onclick="guess();"/>
+		<span id="result"></span>
+	</body>
+</html>

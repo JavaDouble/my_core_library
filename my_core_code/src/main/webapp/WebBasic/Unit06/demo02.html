@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day06/demo:登录验证</title>
+		<style>
+			.ok{
+				color:#0f0;
+			}
+			.error{
+				color:#f00;
+			}
+		</style>
+		<script>
+			function checkUser(){
+				var username=document.getElementById("username").value;
+				var u_msg=document.getElementById("u_msg");
+				var reg=/^\w{6,10}$/;
+				if(reg.test(username)){
+					u_msg.className="ok";
+					return true;
+				}else{
+					u_msg.className="error";
+					if(username.length<6){
+						u_msg.innerHTML="帐号长度太低，安全性较差";
+					}else if(username.length>10){
+						u_msg.innerHTML="帐号长度太大";
+					}else{
+						u_msg.innerHTML="非法输入";
+					}
+					return false;
+				}
+			}
+			function checkPwd(){
+				var password=document.getElementById("password").value;
+				var p_msg=document.getElementById("p_msg");
+				var reg=/^\w{8,12}$/;
+				if(reg.test(password)){
+					p_msg.className="ok";
+					return true;
+				}else{
+					p_msg.className="error";
+					if(password.length<8){
+						p_msg.innerHTML="密码长度太低，安全性较差";
+					}else if(password.length>12){
+						p_msg.innerHTML="密码长度太高";
+					}else{
+						p_msg.innerHTML="非法输入";
+					}
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="http://www.tmooc.cn" onsubmit="return checkUser()+checkPwd()==2;">
+			<h1>登录验证</h1>
+			<p>
+				帐号：<input type="text" id="username" onblur="checkUser()"/>
+				<span id="u_msg">6-10个字符，数字，下划线</span>
+			</p>
+			<p>
+				密码：<input type="password" id="password" onblur="checkPwd()"/>
+				<span id="p_msg">8-12个字符，数字，下划线</span>
+			</p>
+			<p>
+				<input type="submit" value="登录"/>
+			</p>
+		</form>
+	</body>
+</html>

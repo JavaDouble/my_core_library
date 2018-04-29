@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day08/demo2:查询节点的四种方式 创建和删除节点</title>
+		<script>
+		//查询节点的四种方式
+			window.onload=function(){
+				//1.通过id查询//document.getElementById("id")
+				console.log(document.getElementById("bj").innerHTML);//北京
+				//2.通过标签名称查询//document.getElementsByTagName("标签名")
+				
+				//3.通过层次(节点关系)查询 查询某节点的亲属(父亲,孩子,兄弟)
+				var li=document.getElementById("bj");
+				//3.1查询父亲的节点
+				var ul=li.parentNode;//<ul></ul>整体
+				console.log(ul);
+				//3.2查询孩子 查询结果带文本(空格) 一般不用
+				console.log(ul.childNodes);
+				console.log(ul.getElementsByTagName("li"));//不带文本
+				//NodeList[9]
+				//3.3查询兄弟 节点.父亲.兄弟
+				console.log(li.parentNode.getElementsByTagName("li")[0]);
+				//4.通过name属性查询
+				console.log(document.getElementsByName("sex"));
+				//[input, input, item: function]
+				console.log(document.getElementsByName("sex").length);
+				console.log(document.getElementsByName("sex")[0].value);//on 
+			}
+		//创建和删除节点
+			//1.创建节点
+			function f1(){
+				//创建新节点
+				var li=document.createElement("li");
+				li.innerHTML="上海";	
+				//追加节点(父亲)
+				var ul=document.getElementById("city");
+				ul.appendChild(li);
+			}
+			function f2(){
+				//创建新节点
+				var li=document.createElement("li");
+				li.innerHTML="兰州";
+				//插入节点(父亲，弟弟)
+				var ul=document.getElementById("city");
+				var bj=document.getElementById("bj");
+				ul.insertBefore(li,bj);
+			}
+			//2.删除节点
+			function f3(){
+				//通过父亲删除孩子
+				var bj=document.getElementById("bj");
+				bj.parentNode.removeChild(bj); 
+				
+			/* var ul=document.getElementById("city");//标准写法
+				var bj=document.getElementById("bj");
+				ul.removeChild(bj); */
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="city">
+			<li>廊坊</li>
+			<li>佳木斯</li>
+			<li id="bj">北京</li>
+			<li>天津</li>
+			<li>西安</li>
+			<li>铁岭</li>
+			<li>重庆</li>
+			<li>厦门</li>
+			<li>青岛</li>
+		</ul>
+		<p>
+			<input type="radio" name="sex"/>男
+			<input type="radio" name="sex"/>女
+		</p>
+		<p>
+			<input type="button" value="追加" onclick="f1();"/>
+			<input type="button" value="插入" onclick="f2();"/>
+			<input type="button" value="删除" onclick="f3();"/>
+		</p>
+	</body>
+</html>

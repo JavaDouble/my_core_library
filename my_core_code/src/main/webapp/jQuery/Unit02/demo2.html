@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day02/demo2:jQuery事件</title>
+		<style>
+			.big{
+				width:250px;
+				height:250px;
+			}
+		</style>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<script>
+			//页面加载后
+			$(function(){
+				//按钮后绑定事件
+				$(":button:eq(0)").click(function(e){
+					console.log(1);
+					//此事件对象是经过jQuery封装之后的对象。
+					//因为原始的event在不同的浏览器间API有差异，jQuery封装
+					//该对象后给我们提供了统一的API，消除了这个差异。
+					//取消冒泡：e.stopPropagation()
+					//获取事件源:e.target 返回值是DOM对象
+					console.log(e);
+				});
+				//给图片绑定hover事件，该事件是jQuery特有的事件，必须通过
+				//jQuery对象进行绑定
+				$("img").hover(
+					function(){//悬停时变大
+						//this是指当前悬停的图片
+						$(this).addClass("big");
+					},
+					function(){//离开时恢复
+						$(this).removeClass("big");
+					}
+				);
+				//给显示/隐藏按钮后绑定单击事件
+				$(":button:eq(1)").click(function(){
+					//让图片在显示与隐藏之间切换
+					$("img").toggle();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			<input type="button" value="jQuery后绑定事件"/>
+			<input type="button" value="显示/隐藏"/>
+		</p>
+		<p>
+			<img src="../imgs/03.jpg"/>
+		</p>
+	</body>
+</html>

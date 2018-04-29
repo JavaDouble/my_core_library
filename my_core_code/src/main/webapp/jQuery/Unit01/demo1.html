@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day01/demo1:jQuery</title>
+		<script src="../jQuery/jquery-1.11.1.js"></script>
+		<!-- 自定义的JS必须写在引入jQuery之后 -->
+		<script>
+			function bigger(){
+				//获取段落原始字号(16px)
+				var fsize=$("p").css("font-size");
+				//console.log(fsize);
+				//去掉单位
+				fsize=fsize.replace("px","");
+				//console.log(fsize);
+				//+1后再将其设置给所有段落
+				$("p").css("font-size",++fsize+"px");
+				//console.log(fsize);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="+" onclick="bigger();"/>
+		<p>1.jQuery是轻量级的框架</p>
+		<p>2.它提供了简洁而统一的API</p>
+		<p>3.它是对JS进行了封装</p>
+		<h1>write less,do more</h1>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day06/demo03:简单计算器</title>
+		<script>
+			function cal(){
+				//获取文本框的值
+				var input=document.getElementById("input");
+				//var inp=document.getElementById("input").value;
+				//var span=document.getElementById("result");
+				try {
+					input.value=eval(document.getElementById("input").value);
+					//span.innerHTML=eval(input);
+				} catch (e) {
+					console.log(e);
+					input.value="Error"
+					//span.innerHTML="计算表达式有误";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>简单计算器</h1>
+		<input type="text" id="input"/>
+		<input type="button" value="计算" onclick="cal()"/>
+<!-- 		<p>
+			=	<span id="result"></span>
+		</p> -->
+	</body>
+</html>

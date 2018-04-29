@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day06/demo2:登录验证</title>
+		<style>
+			.ok{
+				color:#0f0;
+			}
+			.error{
+				color:#f00;
+			}
+		</style>
+		<script>
+			//检查帐号密码格式
+			function checkUser(){
+				console.log(1);
+				//获取文本框内的值
+			 	var username=document.getElementById("username").value; 
+			 	//console.log(typeof(username));
+				//获取span
+			 	var u_msg=document.getElementById("u_msg");
+			 	//获取span标签内部的内容
+			 	console.log(u_msg.innerHTML);//5-10位字母，数字，下划线 
+			 	//检查帐号的格式
+				//var reg=/^[a-zA-Z0-9_]{5,10}$/;
+				var reg=/^\w{5,10}$/;
+				if(reg.test(username)){
+					u_msg.className="ok";
+					return true;
+				}else{
+					u_msg.className="error";
+	 				if(username.length<5){
+						u_msg.innerHTML="帐号长度太短，安全性低";
+					}else if(username.length>10){
+						u_msg.innerHTML="帐号太长";
+					}else{
+						u_msg.innerHTML="非法输入";	
+				/* 	} 
+	 				return false; */
+				} 				
+			}
+			//检查密码格式
+			function checkPwd(){
+				var password=document.getElementById("password").value;
+				var p_msg=document.getElementById("p_msg");
+				//var reg=/^[a-zA-Z0-9_]{8,12}$/;
+				var reg=/^\w{8,12}$/;
+				if(reg.test(password)){
+					p_msg.className="ok";
+					return true;
+				}else{
+					p_msg.className="error";
+  					if(password.length<8){
+						p_msg.innerHTML="密码太短，安全性低";
+					}else if(password.length>12){
+						p_msg.innerHTML="密码长度超出范围";
+					}else{
+						p_msg.innerHTML="非法输入";	
+					}  
+ 					return false;
+				} 
+			}
+		</script>
+	</head>
+	<body>
+		<form action="http://www.tmooc.cn" onsubmit="return checkUser()+checkPwd()==2;">
+			<h1>登录验证</h1>
+			<p>
+				帐号:<input type="text" id="username" onblur="checkUser();"/>
+				<span id="u_msg">5-10位字母，数字，下划线</span>
+			</p>
+			<p>
+				密码:<input type="password" id="password" onblur="checkPwd();"/>
+				<span id="p_msg">8-12位字母，数字，下划线</span>
+			</p>
+			<p>
+				<input type="submit" value="登录" />
+			</p>
+		</form>
+	</body>
+</html>

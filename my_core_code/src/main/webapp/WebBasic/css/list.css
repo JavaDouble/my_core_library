@@ -1,0 +1,277 @@
+/*1.设置页面整体布局*/
+/*0.对网页做一些基础的声明：*/
+/*星是通用选择器，可以选择一切*/
+*{
+	padding:0;
+	margin:0;
+}
+/*1.分区并设置每个区域的尺寸*/
+div{
+   	border:1px solid #F00;    
+	margin:0 auto;
+}
+.logo {
+	width: 960px;
+	height: 61px;
+}
+.nav {
+	height: 91px;	
+}
+.core {
+	height:410px;
+	/*预留内边距，以便于放渐变条*/
+	padding-top:10px;
+}
+.copy {
+	width: 960px;
+	height: 50px;
+}
+.content{
+	width: 950px;
+	height: 390px;
+	border: 5px solid #8ac1db;
+}
+.content div{
+	width:910px;
+	height:40px;
+}
+.btn{	
+	
+}
+.content .data{
+	height:310px;
+}
+.page{
+	
+}
+
+/*2.添加页面背景色，图片*/
+body{
+	background-color:#0EA8D8;
+}
+.logo{
+	background-image:url("../img/top_bg.png");
+}
+.nav{
+	background-color:#0488BB;
+}
+.core{
+	background-image:url("../img/content_bg.png") repeat-x top;
+}
+.content{
+	background-color:#e8f3f8;
+}
+
+/*3.设置页面文本*/
+
+body{
+	font-fimaly:"微软雅黑","文泉驿正黑","黑体";
+	font-size:14px;
+}
+.logo{
+	text-align:right;
+	line-height:61px;
+}
+.logo a{
+	margin-right:40px;
+	text-decoration:none;
+	color:#fff;
+}
+.logo a:hover{
+	font-weight:bold;
+}
+.copy{
+	text-align:center;
+	color:#fff;
+	line-height:25px;
+}
+
+/*4.设置内容区域(表格样式)*/
+.data table{
+	border:1px solid #ccc;	
+	/*边框合并必须写在table上*/
+	border-collapse:collapse;
+	width:100%;
+}
+.data td{
+	border:1px solid #ccc;
+	text-align:center;
+}
+/*标题行高40px*/
+.data thead tr{
+	line-height:40px;
+	background-color:#fbedce;
+	font-weight:bold;
+}
+/*数据行高32px*/
+.data tbody tr{
+	line-height:32px;
+	background-color:#fff;
+}
+.data tbody tr:hover{
+	background-color:#f7f9fd;
+}
+.update{
+	padding-left:15px;
+	background:url("../img/modification.png") no-repeat left;
+	border:0;	
+}
+/*悬停时，鼠标变为手型*/
+.update:hover{
+	cursor:pointer;
+}
+.delete{
+	padding-left:15px;
+	background:url("../img/delete.png") no-repeat left;
+	border:0;
+}
+.delete:hover{
+	cursor:pointer;
+}
+/*5.定位*/
+/*设置logo*/
+.logo img{
+	float:left;
+}
+/*设置信息提示框*/
+.content{
+	/*仅仅是为了让子元素以此为目标进行绝对定位方便。*/
+	position:relative;
+}
+.content .message{
+	position:absolute;
+	border:1px solid #f68a8a;
+	left:240px;
+	top:100px;
+	width:500px;
+	height:60px;
+	background:#fdecec url("../img/ok.png") no-repeat 10px 20px;
+}
+.message img{
+	float:right;
+	margin-right:5px;
+}
+.message img:hover{
+	cursor:pointer;
+}
+.message p{
+	margin-left:38px;
+	line-height:60px;
+}
+.btn{
+	position:relative;
+}
+.btn img{
+	margin:7px 0;
+	float:right;
+}
+.btn p{
+	position:absolute;
+	right:20px;
+	top:13px;
+	color:#fff;
+}
+.btn p:hover{
+	cursor: pointer;
+	font-weight:bold;
+	
+}
+/*6.设置导航栏*/
+.nav ul{
+	width:960px;
+	height:91px;
+	margin:0 auto;
+	list-style-type:none;
+}
+
+.nav li{
+	width:68px;
+	height:77px;
+	float:left;
+	margin:7px 14px;
+}
+
+.index{
+	background-image:url("../img/index_out.png");
+}
+.index:hover{
+	background-image:url("../img/index_on.png");
+}
+.role{
+	background-image:url("../img/role_out.png");
+}
+.role:hover{
+	background-image:url("../img/role_on.png");
+}
+.admin{
+	background-image:url("../img/admin_out.png");
+}
+.admin:hover{
+	background-image:url("../img/admin_on.png");
+}
+.fee{
+	background-image:url("../img/fee_out.png");
+}
+.fee:hover{
+	background-image:url("../img/fee_on.png");
+}
+.account{
+	background-image:url("../img/account_out.png");
+}
+.account:hover{
+	background-image:url("../img/account_on.png");
+}
+.service{
+	background-image:url("../img/service_out.png");
+}
+.service:hover{
+	background-image:url("../img/service_on.png");
+}
+.bill{
+	background-image:url("../img/bill_out.png");
+}
+.bill:hover{
+	background-image:url("../img/bill_on.png");
+}
+.report{
+	background-image:url("../img/report_out.png");
+}
+.report:hover{
+	background-image:url("../img/report_on.png");
+}
+.information{
+	background-image:url("../img/information_out.png");
+}
+.information:hover{
+	background-image:url("../img/information_on.png");
+}
+.password{
+	background-image:url("../img/password_out.png");
+}
+.password:hover{
+	background-image:url("../img/password_on.png");
+}
+/*分页*/
+.page{
+	text-align:center;
+}
+.page a{
+	text-decoration:none;
+	color:#000;
+	margin:0;
+	padding:5px 10px;
+	border:1px solid #e8f3f8;
+}
+.page a:hover{
+	border:1px solid #97b9c9;
+    color:#067db5;
+    background-color:#cddde4;
+}
+.current_page{
+	border:1px solid #97B9C9;
+    background-color:#fff;
+}
+/*收尾：去掉调试时的边框*/
+div,.nav ul,.nav li{
+	border:0;
+}

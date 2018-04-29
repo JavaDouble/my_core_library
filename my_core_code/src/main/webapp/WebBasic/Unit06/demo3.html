@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day06/demo3:简单计算器</title>
+		<script>
+			function cal(){
+				var input=document.getElementById("t1").value;
+				var span=document.getElementById("result");
+				try {
+					span.innerHTML=eval(input);
+				} catch (e) {
+					console.log(e);
+					span.innerHTML="计算表达式有误";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>简单计算器</h1>
+		<p>
+			<input type="text" id="t1"/>
+			<input type="button" value="计算" id="b1" onclick="cal();"/>	
+		</p>
+		<p>
+			=	<span id="result"></span>
+		</p>
+	</body>
+</html>

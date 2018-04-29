@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day09/demo3:</title>
+		<style>
+			div{
+				border:1px solid #eee;
+				width:400px;
+				padding:30px;
+			}
+			p{
+				border:1px solid #ccc;
+				padding:30px 50px;
+			}
+		</style>
+		<script>
+			function f1(e){
+				alert("冒泡机制");
+				//停止冒泡 浏览器提供 不同的浏览器方法不同
+				//e={"stopPropagation":function(){}}
+				//e={"cancelBubble":false}
+				if(e.stopPropagation){
+					//其他浏览器
+					//console.log(1);
+					e.stopPropagation();	
+				}else{
+					//IE浏览器
+					//console.log(2);
+					e.cancelBubble=true;
+				}
+			}
+			function f2(e){
+				//srcElement：IE浏览器 target：其他浏览器
+				var obj=e.srcElement||e.target;
+				console.log(obj);
+			}
+		</script>
+	</head>
+	<body>
+		<div onclick="alert('div');">
+			<p onclick="alert('p');">
+				<!-- 取消事件的冒泡 浏览器提供 不同的浏览器方法不同-->
+				<input type="button" value="事件处理机制" onclick="f1(event);"/>
+			</p>
+		</div>
+		<div onclick="f2(event);">
+			<input type="button" value="获取事件源1"/>
+			<input type="button" value="获取事件源2"/>
+			<input type="button" value="获取事件源3"/>
+		</div>
+	</body>
+</html>

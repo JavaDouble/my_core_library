@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day04/demo1:浮动定位</title>
+		<style>
+			#right,p,#left,p{
+				width:400px;
+				border:1px solid red;
+			}
+			#one,#two,#three,#four,#five,#six{
+				width:100px;
+				height:100px;
+				margin:10px;
+			}
+			#one,#four{
+				background-color:red;
+			}
+			#two,#five{
+				background-color:green;
+			}
+			#three,#six{
+				background-color:blue;
+			}
+			/*浮动定位*/
+			/*右浮动*/
+			#one,#two,#three{
+				float:right;
+			}
+			/*左浮动*/
+			#four,#five,#six{
+				float:left;
+			}
+			/*消除浮动定位的影响*/
+ 			/*第一种方法*/
+/* 			#p1{
+				clear:right;
+			}
+			#p2{
+				clear:left;
+			}  */
+			/*第二种方法*/
+/* 			#20{
+				clear:right;
+			}
+			#21{
+				clear:left;
+			} */
+			#d20{
+				clear:right;
+			}
+			#d21{
+				clear:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="right">
+			<div id="one"></div>
+			<div id="two"></div>
+			<div id="three"></div>
+			<!-- <div id="20"></div> id不可以命名纯数字 不然显示不出效果-->
+			<div id="d20"></div>
+		</div>
+		<p id="p1">浮动时看看我的位置</p>
+		
+		<div id="left">
+			<div id="four"></div>
+			<div id="five"></div>
+			<div id="six"></div>
+			<!-- <div id="21"></div> id不可以命名纯数字 不然显示不出效果-->
+			<div id="d21"></div>
+		</div>
+		<p id="p2">浮动时看看我的位置</p>
+	</body>
+</html>

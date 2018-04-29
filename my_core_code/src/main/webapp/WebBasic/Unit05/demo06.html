@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day05/demo06:计算阶乘</title>
+		<script>
+			function cal(){
+				var num=document.getElementById("t1").value;
+				var span=document.getElementById("result");
+				if(isNaN(num)){
+					span.innerHTML="请输入一个数字";
+				}else{
+					if(num>0 && num<100){
+						var sum=1;
+/* 						for(var i=1;i<=num;i++){
+							sum*=i;
+						}
+						for(var i=num;i>0;i--){
+							sum*=i;
+						} */
+						for(var i=num;i;i--){
+							sum*=i;
+						}
+						span.innerHTML=sum;
+					}else if(num==0){
+						span.innerHTML=1;
+					}else{
+						span.innerHTML="负数没有阶乘";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>0的阶乘是1</p>
+		<p>n的阶乘=n*(n-1)*(n-2)....1</p>
+		<p>n是正整数</p>
+		<p>
+			<input type="text" id="t1"/>
+			<input type="button" value="计算阶乘" onclick="cal();"/>
+			=	<span id="result"></span>
+		</p>
+	</body>
+</html>

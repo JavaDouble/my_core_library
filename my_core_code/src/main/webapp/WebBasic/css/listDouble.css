@@ -1,0 +1,251 @@
+/*1.定义管理员列表页面的整体布局*/
+*{
+	padding:0;
+	margin:0;
+}
+div{
+	border:1px solid red; 
+	margin:0 auto;
+}
+.logo{
+	width:960px;
+	height:61px;
+}
+.nav{
+	height:91px;
+}
+.core{
+	height:410px;
+	padding-top:10px;
+}
+.copy{
+	width:960px;
+	height:50px;
+}
+.content{
+	width:950px;
+	height:390px;
+	border:5px solid #8ac1db;
+}
+.content div{
+	width:910px;
+	height:40px;
+}
+.content .data{
+	height:310px;
+}
+
+/*2.设置背景色，图*/
+body{
+	background-color:#0ea8d8;
+}
+.logo{
+	background:url("../img/top_bg.png");
+}
+.nav{
+	background-color:#0488bb;
+}
+.content{
+	background-color:#e8f3f8;
+}
+/*3.设置页面文本*/
+body{
+	font-fimally:"微软雅黑","文泉驿正黑","黑体";
+	font-size:14px;
+}
+.logo{
+	text-align:right;
+	line-height:61px;
+}
+.logo a{
+	margin-right:40px;
+	text-decoration:none;
+	color:#fff;
+}
+.logo a:hover{
+	font-weight:bold;
+}
+.copy{
+	text-align:center;
+	color:#fff;
+	line-height:25px;
+}
+/*4.设置内容区域*/
+.data table{
+	border:1px solid #ccc;
+	border-collapse:collapse;
+	width:100%;
+}
+.data table td{
+	border:1px solid #ccc;
+	text-align:center;
+}
+.data thead tr{
+	line-height:40px;
+	background-color:#fbedce;
+	font-weight:bold;
+}
+.data tbody tr{
+	line-height:32px;
+}
+.data tbody tr:hover{
+	background-color:#f7f9fd;
+}
+.modify,.delete{
+	padding-left:15px;
+	border:0;
+}
+.modify,.delete:hover{
+	cursor:pointer
+}
+.modify{
+	background:url("../img/modification.png") no-repeat left;
+}
+.delete{
+	background:url("../img/delete.png") no-repeat left;
+}
+/*5.定位*/
+/*设置logo图片*/
+.logo img{
+	float:left;
+}
+.content{
+	position:relative;
+}
+.content .message{
+	position:absolute;
+	left:240px;
+	top:100px;
+	width:500px;
+	height:60px;
+	background:#fdecec url("../img/ok.png") no-repeat 10px 20px;
+	border:1px solid #f68a8a;
+}
+.message img{
+	float:right;
+	margin:5px;
+}
+.message img:hover{
+	cursor:pointer;
+}
+.message p{
+	margin-left:38px;
+	line-height:61px;
+}
+.btn{
+	position:relative;
+}
+.btn img{
+	margin:7px 0;
+	float:right;
+}
+.btn p{
+	position:absolute;
+	right:20px;
+	top:13px;
+	color:#fff;
+}
+.btn p:hover{
+	cursor: pointer;
+	font-weight:bold;
+	
+}
+/*6.设置导航栏*/
+.nav ul{
+ 	/* border:1px solid #fff;  */
+	width:960px;
+	height:91px;
+	margin:0 auto;
+	list-style-type:none;
+}
+.nav li{
+	width:68px;
+	height:77px;
+	margin:7px 14px;
+	float:left;
+/* 	border:1px solid #fff; */
+}
+.index{
+	background-image:url("../img/index_out.png");
+}
+.index:hover{
+	background-image:url("../img/index_on.png");
+}
+.role{
+	background-image:url("../img/role_out.png");
+}
+.role:hover{
+	background-image:url("../img/role_on.png");
+}
+.admin{
+	background-image:url("../img/admin_out.png");
+}
+.admin:hover{
+	background-image:url("../img/admin_on.png");
+}
+.fee{
+	background-image:url("../img/fee_out.png");
+}
+.fee:hover{
+	background-image:url("../img/fee_on.png");
+}
+.account{
+	background-image:url("../img/account_out.png");
+}
+.account:hover{
+	background-image:url("../img/account_on.png");
+}
+.service{
+	background-image:url("../img/service_out.png");
+}
+.service:hover{
+	background-image:url("../img/service_on.png");
+}
+.bill{
+	background-image:url("../img/bill_out.png");
+}
+.bill:hover{
+	background-image:url("../img/bill_on.png");
+}
+.report{
+	background-image:url("../img/report_out.png");
+}
+.report:hover{
+	background-image:url("../img/report_on.png");
+}
+.information{
+	background-image:url("../img/information_out.png");
+}
+.information:hover{
+	background-image:url("../img/information_on.png");
+}
+.password{
+	background-image:url("../img/password_out.png");
+}
+.password:hover{
+	background-image:url("../img/password_on.png");
+}
+/*分页*/
+.page{
+	text-align:center;
+}
+.page a{
+	color:#000;
+	text-decoration: none;
+	margin:0;
+	padding:5px 10px;
+	border:1px solid #e8f3f8;
+}
+.page a:hover{
+	border:1px solid #97b9c9;
+    color:#067db5;
+    background-color:#cddde4;
+}
+.current_page{
+	border:1px solid #97B9C9;
+    background-color:#fff;
+}
+/*收尾：去掉调试时的边框*/
+div,.nav ul,.nav li{
+	border:0;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day04/demo7:显示方式和鼠标形状</title>
+		<style>
+			/*显示方式*/
+			.block{
+				display:block;
+			}	
+			.inline{
+				display:inline;
+			}	
+			.none{
+				display:inline;
+			}
+			/*鼠标形状*/
+			.ok:hover{
+				/* cursor:pointer; */
+				/* cursor:default; */
+				/* cursor:crosshair; */
+				/* cursor:text; */
+ 				/* cursor:wait; */
+				 cursor:help;  
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="../imgs/02.jpg" class="block"/>
+			<img src="../imgs/02.jpg" class="block"/>
+			<img src="../imgs/02.jpg" class="block"/>
+			<img src="../imgs/02.jpg" class="none"/>
+			<p class="inline">好多照片</p>
+			<p class="inline">好多照片</p>
+		</div>
+		<div>
+			<img src="../img/ok.png" class="ok"/>
+		</div>
+	</body>
+</html>

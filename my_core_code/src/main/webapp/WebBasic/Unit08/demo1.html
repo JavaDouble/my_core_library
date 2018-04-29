@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit07/demo5:图片轮播</title>
+		<style>
+			.show{
+				display:inline-block;
+			}
+			.hidden{
+				display:none;
+			}
+			div{
+				width:218px;
+				height:218px;
+				border:1px,solid,red;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				start();
+			}
+			var id;
+			//轮播次数 默认为0
+			var n=0;
+			function start(){
+				//启动定时器，开始轮播
+				id=window.setInterval(function(){
+					n++;
+					//console.log(n);
+					//获取所有图片
+					var imgs=document.getElementsByTagName("img");
+					//遍历图片数组，并隐藏所有图片
+					for(var i=0;i<imgs.length;i++){
+						imgs[i].className="hidden";
+					}
+					//获取当前的图片 并显示出来
+					var index=n % imgs.length;
+					imgs[index].className="show";
+					//鼠标悬停时,停止轮播
+					//鼠标离开时,
+				}, 2000);
+			}
+			function parse(){
+				clearInterval(id);
+			}
+		</script>
+	</head>
+	<body>
+		<!-- onmouseover是鼠标悬停事件 onmouseout是鼠标离开事件
+		hover是伪类选择器，不是事件!!! -->
+		<div onmouseover="parse();" onmouseout="start();">
+			<img src="../imgs/01.jpg"/>
+			<img src="../imgs/02.jpg" class="hidden"/>
+			<img src="../imgs/03.jpg" class="hidden"/>
+			<img src="../imgs/04.jpg" class="hidden"/>
+			<img src="../imgs/05.jpg" class="hidden"/>
+			<img src="../imgs/06.jpg" class="hidden"/>
+		</div>
+	</body>
+</html>

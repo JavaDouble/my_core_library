@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>day08/demo3:联动菜单</title>
+		<script type="text/javascript">
+			//页面加载后
+			var cities;
+			window.onload=function(){
+				//模拟查询的所有城市
+				cities=[["石家庄","廊坊","保定"],
+				        ["济南","青岛","日照"],
+				        ["太原","大同","临汾"]];
+			}
+			function change(){
+				//console.log(1);
+				//获取省份
+				var province=document.getElementById("province").value;
+				//console.log(province);
+				//获取该省份的城市
+				var pv_cities=cities[province];
+				//先删除旧的城市
+				var city=document.getElementById("city");
+				city.innerHTML="<option>请选择</option>";
+	 			/*var options=city.getElementsByTagName("option");
+				for(var i=options.length-1;i;i--){
+					city.removeChild(options[i]);
+				} */ 
+				//追加新的城市
+				if(pv_cities){
+					for(var i=0;i<pv_cities.length;i++){
+						var option=document.createElement("option");
+						option.innerHTML=pv_cities[i];
+						city.appendChild(option);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		省份：
+		<select id="province" onchange="change();">
+			<option value="-1">请选择</option>
+			<option value="0">河北省</option>
+			<option value="1">山东省</option>
+			<option value="2">山西省</option>
+<!-- 		<option>请选择</option>
+			<option>河北省</option>
+			<option>山东省</option>
+			<option>山西省</option> -->
+		</select>
+		城市：
+		<select id="city">
+			<option>请选择</option>
+		</select>
+	</body>
+</html>

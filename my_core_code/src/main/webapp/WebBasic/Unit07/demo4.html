@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>unit07/demo4:DOM document对象</title>
+		<script>
+		//onload是页面加载事件，在网页加载完成后自动触发，触发时调用绑定的函数。
+			window.onload=function(){
+				/* 1.读取节点的名称及类型 */
+				var p2=document.getElementById("p2");
+				var info="节点名："+p2.nodeName+" 节点类型："+p2.nodeType;
+				console.log(info);//节点名：P 节点类型：1
+			/* 	2.读取该节点的文本信息/内容(双标签中间的文本) */
+				//2.1 innerHTML全部读取(包括子标签)
+				var text=p2.innerHTML;
+				console.log(text);//北风有力<b>菊花残</b>。
+				//修改该节点的信息(子标签有效)
+				p2.innerHTML="北风有力<u>菊花残</u>。";
+
+				// 2.2 innerText不能读取子标签
+				text=p4.innerText;
+				console.log(text);//双雄有意戏红颜。
+				//修改该节点的信息(子标签无效)
+				p4.innerText="双雄有意<u>戏红颜</u>。";
+
+				/* 3.读写节点的值 只有如下表单控件有值input,select,textarea */
+				var b1=document.getElementById("b1");//读
+				console.log(b1.value);
+				b1.value="aaa";//写
+				console.log(b1.value)
+
+				/* 4.读写节点属性 */
+				//4.1通过方法读写属性(*)
+				//读取
+				var img=document.getElementById("i1");
+				var src=img.getAttribute("src");
+				console.log(src);//../imgs/01.jpg
+				console.log(i1.innerHTML)//空
+				//写入/修改
+				src=img.setAttribute("src","../imgs/02.jpg");
+				img=document.getElementById("i1");
+				src=img.getAttribute("src");
+				console.log(src);//../imgs/02.jpg
+				//删除
+				img.removeAttribute("src");
+
+				//4.2通过属性名称读写属性
+				//1)标准属性名(*) className,id,style
+				var p9=document.getElementById("p9");
+				console.log(p9.style);//CSSStyleDeclaration:样式描述
+				console.log(p9.style.color);//red
+				p9.style.color="blue";//修改
+				console.log(p9.style.color);//blue
+				console.log(p9.id);//p9
+				//2)非标的属性名
+				//input.type,img.src,a.href
+			}
+		</script>
+	</head>
+	<body>
+		<h1>DOM document对象</h1>
+		<p>冬至未寒今夜寒，</p>
+		<p id="p2">北风有力<b>菊花残</b>。</p>
+		<p>孤芳无心攀高峰，</p>
+		<p id="p4">双雄有意<b>戏红颜</b>。</p>
+		<p>疾风来时尘逍遥，</p>
+		<p>暴雨去处水阑珊。</p>
+		<p>但行乐时且行乐，</p>
+		<p>不留寂寞在人间。</p>
+		<p>
+			<input type="button" value="按钮" id="b1"/>
+		</p>
+		<p>
+			<img src="../imgs/01.jpg" id="i1"/>
+		</p>
+		<p id ="p9" style="color:red;">标准的属性名很少</p>
+	</body>
+</html>
